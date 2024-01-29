@@ -1,0 +1,48 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        domain: 140.143.151.205
+        same-site: lax
+        secure: false
+spring:
+  # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://140.143.151.205:3306/yubi?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    username: yubi
+    password: 123456
+  # session 失效时间 30 天
+  session:
+    timeout: 2592000
+    store-type: none
+  # redis配置
+  redis:
+    port: 6379
+    host: 140.143.151.205
+    database: 1
+    password: 123456
+
+  # rabbitmq 信息
+  rabbitmq:
+    host: 140.143.151.205
+    password: 123456
+    username: admin
+    port: 5672
+    listener:
+      direct:
+        acknowledge-mode: manual
+
+mybatis-plus:
+  configuration:
+    # 生产环境关闭日志
+    log-impl: ''
+
+
+# 鱼聪明SDK
+yuapi:
+  client:
+    access-key: ngf80i6i8mwnfh2zrmm47edxsf8xwil6
+    secret-key: nqe8gq1jpt5fa5iqo4j5spwvsaesalj1
